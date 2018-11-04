@@ -1,6 +1,6 @@
 {
   "name": "json-version-control",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JSON version control.",
   "main": "dist/index.js",
   "scripts": {
@@ -8,8 +8,8 @@
   },
   "author": "Dato Marjanidze",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/datoMarjanidze/json-version-control"
+    "type": "git",
+    "url": "https://github.com/datoMarjanidze/json-version-control"
   },
   "keywords": [
     "version control",
