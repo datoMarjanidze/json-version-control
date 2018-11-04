@@ -9,9 +9,7 @@ import {
   objectHasPropertiesPath, 
   pushPropInTerminalPropertie,
   cloneArray,
-  isArray,
-  arrayIsEmpty,
-  arrayIsNotEmpty
+  isArray
 } from '../utils'
 
 /**
@@ -59,6 +57,25 @@ const getModifiedValues = (nestedPropertiesPath: Array<string>, predecessorObjec
         {
           if((isObject(predecessorObject[predecessorKey]) && isArray(currentObject[predecessorKey])) || 
           (isArray(predecessorObject[predecessorKey]) && isObject(currentObject[predecessorKey])))
+          {
+            const lastIndex = _nestedPropertiesPath.length - 1
+            const root = _nestedPropertiesPath[0]
+            const oldProp = _nestedPropertiesPath[lastIndex]
+            const oldValue = predecessorObject[oldProp]
+            
+            if(objectHasPropertiesPath(_nestedPropertiesPath.slice(0, lastIndex), modifiedValues))
+            {
+              modifiedValues[root] = pushPropInTerminalPropertie(_nestedPropertiesPath, modifiedValues, oldProp, oldValue)[root]
+            }
+            else
+            {
+              modifiedValues[root] = createNestedObjectPath(_nestedPropertiesPath, oldProp, oldValue)[root]
+            }
+          }
+          else if(
+            (isObject(predecessorObject[predecessorKey]) || isArray(predecessorObject[predecessorKey]) && isPrimitive(currentObject[predecessorKey])) ||
+            (isObject(currentObject[predecessorKey]) || isArray(currentObject[predecessorKey]) && isPrimitive(predecessorObject[predecessorKey]))
+          )
           {
             const lastIndex = _nestedPropertiesPath.length - 1
             const root = _nestedPropertiesPath[0]
