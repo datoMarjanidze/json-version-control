@@ -1,0 +1,29 @@
+{
+  "name": "json-version-control",
+  "version": "1.0.2",
+  "description": "JSON version control.",
+  "main": "dist/index.js",
+  "scripts": {
+    "webpack": "webpack --config webpack.config.js"
+  },
+  "author": "Dato Marjanidze",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/datoMarjanidze/json-version-control"
+  },
+  "keywords": [
+    "version control",
+    "json"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-loader": "^5.2.1",
+    "typescript": "^3.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {}
+}

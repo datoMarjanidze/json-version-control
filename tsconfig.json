@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "ES6",
+    "removeComments": true,
+    "sourceMap": true,
+    "alwaysStrict": true,
+    // "noUnusedParameters": true,
+    // "noUnusedLocals": true,
+    "pretty": true,
+    "noEmitOnError": true,
+  },
+  "include": [
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}
